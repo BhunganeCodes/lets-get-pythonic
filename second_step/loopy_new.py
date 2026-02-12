@@ -30,9 +30,13 @@ def password_strength():
 
 
 def grade_analyzer(grades):
+    if not grades:
+        return "No Pass"
     
-    # TODO: Implement this function
-    pass
+    for grade in grades:
+        if grade < 60:
+            return "No Pass"
+    return "Pass"
 
 
 def valley_finder(data):
