@@ -60,5 +60,5 @@ def remove_duplicates(numbers):
 
 def multiplication_table(n):
     
-    # TODO: Implement this function
-    pass
+    for i in range(1, 11):
+        print(f"{i} x {n} = {i * n}")
