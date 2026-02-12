@@ -49,9 +49,13 @@ def calculate_average(numbers):
 
 def remove_duplicates(numbers):
     
-    # TODO: Implement this function
-    # DO NOT use set() directly as it doesn't preserve order
-    pass
+    res = []
+
+    for num in numbers:
+        if num in res:
+            continue
+        res.append(num)
+    return res
 
 
 def multiplication_table(n):
