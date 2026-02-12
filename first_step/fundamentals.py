@@ -24,8 +24,9 @@ def count_vowels(text):
 
 def is_palindrome(text):
     
-    # TODO: Implement this function
-    pass
+    text = text.replace(" ", "").lower()
+
+    return text == text[::-1]
 
 
 def find_max(numbers):
