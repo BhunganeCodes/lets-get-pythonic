@@ -40,10 +40,12 @@ def grade_analyzer(grades):
 
 
 def valley_finder(data):
-    
-    # TODO: Implement this function
-    # Remember: edges cannot be valleys, must be STRICTLY lower
-    pass
+    res = []
+
+    for i in range(1, len(data) - 1):
+        if data[i] < data[i - 1] and data[i] < data[i + 1]:
+            res.append(data[i])
+    return res
 
 
 def email_validator(email_list):
