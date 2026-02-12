@@ -19,9 +19,14 @@ def temperature_converter(celsius_temps):
 
 def password_strength():
     
-    # TODO: Implement this function
-    # Use while loop and input() to get user input
-    pass
+    while True:
+        password = input("Enter a password:")
+
+        if re.search(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&]).{8,}$", password):
+            print("Strong password accepted!")
+            break
+        print("Too weak. Try again.")
+
 
 
 def grade_analyzer(grades):
