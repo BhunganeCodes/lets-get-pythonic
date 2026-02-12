@@ -30,10 +30,14 @@ def is_palindrome(text):
 
 
 def find_max(numbers):
-    
-    # TODO: Implement this function
-    # DO NOT use the built-in max() function
-    pass
+    if not numbers:
+        return None
+    res = numbers[0]
+
+    for num in numbers:
+        if num > res:
+            res = num
+    return res
 
 
 def calculate_average(numbers):
