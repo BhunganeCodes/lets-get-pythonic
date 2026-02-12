@@ -13,8 +13,13 @@ def fizzbuzz(n):
 
 def count_vowels(text):
     
-    # TODO: Implement this function
-    pass
+    count = 0
+    vowels = "aeiouAEIOU"
+
+    for char in text:
+        if char in vowels:
+            count += 1
+    return count
 
 
 def is_palindrome(text):
