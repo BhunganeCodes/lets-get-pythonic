@@ -41,9 +41,10 @@ def find_max(numbers):
 
 
 def calculate_average(numbers):
+    if not numbers:
+        return 0
     
-    # TODO: Implement this function
-    pass
+    return sum(numbers) / len(numbers)
 
 
 def remove_duplicates(numbers):
