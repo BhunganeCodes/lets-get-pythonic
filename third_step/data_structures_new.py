@@ -13,11 +13,15 @@ def priority_queue_mapper(tasks):
 
 
 def merge_sorted_lists(list1, list2):
-    
-    # TODO: Implement this function
-    # Hint: Use two pointers, compare elements, build result list
-    pass
 
+    if list1 != sorted(list1) or list2 != sorted(list2):
+        raise ValueError
+    
+    res = []
+    res.extend(list1)
+    res.extend(list2)
+    return sorted(res)
+    
 
 def inventory_grouper(products):
     
