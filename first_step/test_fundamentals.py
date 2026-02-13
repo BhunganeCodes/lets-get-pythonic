@@ -1,5 +1,5 @@
 from io import StringIO
-import first_step.fundamentals as fun_ext
+import fundamentals as fun_ext
 import sys
 
 class TestExtendedFunctions():

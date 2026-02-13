@@ -2,41 +2,66 @@ import re
 
 
 def recipe_scaler(ingredients, multiplier):
-    
-    # TODO: Implement this function
-    pass
+    res = []
+
+    for item in ingredients:
+        res.append(int(item * multiplier))
+    return res
 
 
 def temperature_converter(celsius_temps):
-    
-    # TODO: Implement this function
-    pass
+    res = []
+
+    for c in celsius_temps:
+        res.append(int(c * 9/5) + 32)
+    return res
 
 
 def password_strength():
     
-    # TODO: Implement this function
-    # Use while loop and input() to get user input
-    pass
+    while True:
+        password = input("Enter a password:")
+
+        if re.search(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&]).{8,}$", password):
+            print("Strong password accepted!")
+            break
+        print("Too weak. Try again.")
+
 
 
 def grade_analyzer(grades):
+    if not grades:
+        return "No Pass"
     
-    # TODO: Implement this function
-    pass
+    for grade in grades:
+        if grade < 60:
+            return "No Pass"
+    return "Pass"
 
 
 def valley_finder(data):
-    
-    # TODO: Implement this function
-    # Remember: edges cannot be valleys, must be STRICTLY lower
-    pass
+    res = []
+
+    for i in range(1, len(data) - 1):
+        if data[i] < data[i - 1] and data[i] < data[i + 1]:
+            res.append(data[i])
+    return res
 
 
 def email_validator(email_list):
+    res = {"valid_emails": [],
+           "invalid_emails": []
+           }
     
-    # TODO: Implement this function
-    pass
+    for email in email_list:
+        if "@" in email:
+            name, domain = email.split("@")
+            if "." in domain and len(name) >= 1:
+                res["valid_emails"].append(email)
+        else:
+            res["invalid_emails"].append(email)
+        
+    return res
 
 
 def budget_tracker(budget, daily_expenses):

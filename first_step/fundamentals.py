@@ -1,42 +1,64 @@
 def fizzbuzz(n):
     
-    # TODO: Implement this function
-    pass
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(f"{i}")
 
 
 def count_vowels(text):
     
-    # TODO: Implement this function
-    pass
+    count = 0
+    vowels = "aeiouAEIOU"
+
+    for char in text:
+        if char in vowels:
+            count += 1
+    return count
 
 
 def is_palindrome(text):
     
-    # TODO: Implement this function
-    pass
+    text = text.replace(" ", "").lower()
+
+    return text == text[::-1]
 
 
 def find_max(numbers):
-    
-    # TODO: Implement this function
-    # DO NOT use the built-in max() function
-    pass
+    if not numbers:
+        return None
+    res = numbers[0]
+
+    for num in numbers:
+        if num > res:
+            res = num
+    return res
 
 
 def calculate_average(numbers):
+    if not numbers:
+        return 0
     
-    # TODO: Implement this function
-    pass
+    return sum(numbers) / len(numbers)
 
 
 def remove_duplicates(numbers):
     
-    # TODO: Implement this function
-    # DO NOT use set() directly as it doesn't preserve order
-    pass
+    res = []
+
+    for num in numbers:
+        if num in res:
+            continue
+        res.append(num)
+    return res
 
 
 def multiplication_table(n):
     
-    # TODO: Implement this function
-    pass
+    for i in range(1, 11):
+        print(f"{i} x {n} = {i * n}")
