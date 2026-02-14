@@ -61,9 +61,8 @@ def paginator(items, page_size):
     
     res = []
 
-    while items:
-        res.append(items[:page_size])
-        del items[:page_size]
+    for i in range(0, len(items), page_size):
+        res.append(items[i:i+page_size])
     return res
 
 
