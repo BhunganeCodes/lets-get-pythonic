@@ -30,7 +30,6 @@ def priority_queue_mapper(tasks):
             res[priority].append(task)
     return res
     
-print(priority_queue_mapper([("task1", 1), ("task2", 2), ("task3", 1)]))
 
 def merge_sorted_lists(list1, list2):
 
@@ -44,17 +43,28 @@ def merge_sorted_lists(list1, list2):
     
 
 def inventory_grouper(products):
-    
-    # TODO: Implement this function
-    # Hint: Use nested dictionaries, accumulate totals
-    pass
+    res = {}
+    for item in products:
+        temp = {}
+        for k, v in item.items():
+            if isinstance(v, str) and v.isalnum():
+                if v not in temp:
+                    temp["skus"] = [v]
+                    print(temp)
 
+
+   
 
 def paginator(items, page_size):
+    if page_size < 1:
+        raise ValueError
     
-    # TODO: Implement this function
-    # Hint: Use list slicing in a loop
-    pass
+    res = []
+
+    while items:
+        res.append(items[:page_size])
+        del items[:page_size]
+    return res
 
 
 def graph_degree_counter(graph):
