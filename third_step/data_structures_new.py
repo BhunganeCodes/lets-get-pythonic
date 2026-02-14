@@ -1,8 +1,18 @@
 def matrix_transposer(matrix):
+    if not matrix:
+        return []
     
-    # TODO: Implement this function
-    # Hint: Use zip() or nested loops
-    pass
+    res = []
+    for row in range(len(matrix[0])):
+        temp = []
+        for col in range(len(matrix)):
+            if not isinstance(matrix[col], list):
+                raise TypeError
+            if len(matrix[col]) != len(matrix[0]):
+                raise ValueError
+            temp.append(matrix[col][row])
+        res.append(temp)
+    return res
 
 
 def priority_queue_mapper(tasks):
