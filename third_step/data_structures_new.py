@@ -16,11 +16,21 @@ def matrix_transposer(matrix):
 
 
 def priority_queue_mapper(tasks):
-    
-    # TODO: Implement this function
-    # Hint: Use setdefault() or defaultdict
-    pass
+    res = {}
 
+    for tsk in tasks:
+        if len(tsk)!= 2:
+            raise ValueError
+        task, priority = tsk
+        if not isinstance(priority, int):
+            raise TypeError
+        if priority not in res:
+            res[priority] = [task]
+        else:
+            res[priority].append(task)
+    return res
+    
+print(priority_queue_mapper([("task1", 1), ("task2", 2), ("task3", 1)]))
 
 def merge_sorted_lists(list1, list2):
 
