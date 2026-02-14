@@ -56,13 +56,10 @@ def inventory_grouper(products):
    
 
 def paginator(items, page_size):
-    if page_size < 1:
-        raise ValueError
+    if page_size < 1: raise ValueError
     
-    res = []
+    res = [items[i:i+page_size] for i in range(0, len(items), page_size)]
 
-    for i in range(0, len(items), page_size):
-        res.append(items[i:i+page_size])
     return res
 
 
