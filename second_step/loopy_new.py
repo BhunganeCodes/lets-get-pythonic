@@ -60,7 +60,18 @@ def valley_finder(data):
 
 
 def email_validator(email_list):
-    pass
+    res = {
+        "valid_emails": [],
+        "invalid_emails": []
+    }
+
+    for email in email_list:
+        if re.search(r"^[^@]+@{1}[a-zA-Z]+\.[a-z]+", email):
+            res["valid_emails"].append(email)
+        else:
+            res["invalid_emails"].append(email)
+    
+    return res
 
 
 def budget_tracker(budget, daily_expenses):
