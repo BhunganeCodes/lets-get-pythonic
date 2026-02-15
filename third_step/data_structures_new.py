@@ -90,12 +90,14 @@ def graph_degree_counter(graph):
         res[k] = len(v)
     
     return res
-print(graph_degree_counter({"A": ["B", "C"], "B": ["A"], "C": ["A"]}))
 
 
 def factorial_calculator(n):
     
-    # TODO: Implement this function using RECURSION
-    # Base case: if n == 0 or n == 1, return 1
-    # Recursive case: return n * factorial_calculator(n - 1)
-    pass
+    if n < 0:
+        raise ValueError
+    
+    if n == 0 or n == 1:
+        return 1
+    
+    return n * factorial_calculator(n - 1)
