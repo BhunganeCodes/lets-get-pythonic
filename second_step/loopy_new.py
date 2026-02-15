@@ -1,8 +1,12 @@
 import re
 
-
 def recipe_scaler(ingredients, multiplier):
-    pass
+    res = []
+
+    for item in ingredients:
+        res.append(item * multiplier)
+    
+    return res
 
 
 def temperature_converter(celsius_temps):
