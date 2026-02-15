@@ -53,4 +53,13 @@ def email_validator(email_list):
 
 
 def budget_tracker(budget, daily_expenses):
-    pass
+    
+    for day, exp in enumerate(daily_expenses, start=1):
+        budget -= exp
+
+        if budget < 0:
+            return f"Budget exceeded on day {day}!"
+
+    if budget > 0:
+        return f"Budget surplus: R {budget}"
+    return "Budget balanced perfectly!"
