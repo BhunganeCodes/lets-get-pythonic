@@ -15,7 +15,7 @@ def matrix_transposer(matrix):
             
             temp.append(matrix[row][col])
         res.append(temp)
-        
+
     return res
 
 
@@ -81,9 +81,16 @@ def paginator(items, page_size):
 
 def graph_degree_counter(graph):
     
-    # TODO: Implement this function
-    # Hint: Simply count length of each adjacency list
-    pass
+    if not graph:
+        return {}
+
+    res = {}
+    
+    for k, v in graph.items():
+        res[k] = len(v)
+    
+    return res
+print(graph_degree_counter({"A": ["B", "C"], "B": ["A"], "C": ["A"]}))
 
 
 def factorial_calculator(n):
