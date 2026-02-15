@@ -3,15 +3,19 @@ def matrix_transposer(matrix):
         return []
     
     res = []
-    for row in range(len(matrix[0])):
+    for col in range(len(matrix[0])):
         temp = []
-        for col in range(len(matrix)):
-            if not isinstance(matrix[col], list):
+
+        for row in range(len(matrix)):
+            if not isinstance(matrix[row], list):
                 raise TypeError
-            if len(matrix[col]) != len(matrix[0]):
+            
+            if len(matrix[row]) != len(matrix[0]):
                 raise ValueError
-            temp.append(matrix[col][row])
+            
+            temp.append(matrix[row][col])
         res.append(temp)
+        
     return res
 
 
@@ -44,22 +48,34 @@ def merge_sorted_lists(list1, list2):
 
 def inventory_grouper(products):
     res = {}
+    
     for item in products:
-        temp = {}
-        for k, v in item.items():
-            if isinstance(v, str) and v.isalnum():
-                if v not in temp:
-                    temp["skus"] = [v]
-                    print(temp)
+        if len(item) != 3:
+            raise KeyError
+        
+        category = item["category"]
+        sku = item["sku"]
+        stock = item["stock"]
 
+        
+        if category not in res:
+            res[category] = {"total_stock": 0, "skus": []}
+        
+        res[category]["total_stock"] += stock
+        res[category]["skus"].append(sku)
 
-   
+    return res
+
 
 def paginator(items, page_size):
-    if page_size < 1: raise ValueError
-    
-    res = [items[i:i+page_size] for i in range(0, len(items), page_size)]
+    if page_size < 1:
+        raise ValueError
 
+    res = []
+
+    for i in range(0, len(items), page_size):
+        res.append(items[i:i+page_size])
+    
     return res
 
 
