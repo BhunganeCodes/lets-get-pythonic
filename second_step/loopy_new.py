@@ -60,13 +60,15 @@ def valley_finder(data):
 
 
 def email_validator(email_list):
+    pattern = r"^[^@]+@[a-zA-Z]+\.[a-zA-Z.]{2,}$"
+
     res = {
         "valid_emails": [],
         "invalid_emails": []
     }
 
     for email in email_list:
-        if re.search(r"^[^@]+@{1}[a-zA-Z]+\.[a-z]+", email):
+        if re.match(pattern, email):
             res["valid_emails"].append(email)
         else:
             res["invalid_emails"].append(email)
