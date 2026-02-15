@@ -2,20 +2,23 @@ def matrix_transposer(matrix):
     if not matrix:
         return []
     
-    res = []
-    for col in range(len(matrix[0])):
-        temp = []
+    first_row = matrix[0]
 
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError
+        
+        if len(row) != len(first_row):
+            raise ValueError
+    
+    res = []
+
+    for col in range(len(first_row)):
+        temp = []
         for row in range(len(matrix)):
-            if not isinstance(matrix[row], list):
-                raise TypeError
-            
-            if len(matrix[row]) != len(matrix[0]):
-                raise ValueError
-            
             temp.append(matrix[row][col])
         res.append(temp)
-
+    
     return res
 
 
@@ -68,6 +71,7 @@ def inventory_grouper(products):
 
 
 def paginator(items, page_size):
+
     if page_size < 1:
         raise ValueError
 
@@ -93,7 +97,7 @@ def graph_degree_counter(graph):
 
 
 def factorial_calculator(n):
-    
+
     if n < 0:
         raise ValueError
     
