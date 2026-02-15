@@ -2,70 +2,30 @@ import re
 
 
 def recipe_scaler(ingredients, multiplier):
-    res = []
-
-    for item in ingredients:
-        res.append(int(item * multiplier))
-    return res
+    pass
 
 
 def temperature_converter(celsius_temps):
-    res = []
-
-    for c in celsius_temps:
-        res.append(int(c * 9/5) + 32)
-    return res
+    pass
 
 
 def password_strength():
     
-    while True:
-        password = input("Enter a password:")
-
-        if re.search(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&]).{8,}$", password):
-            print("Strong password accepted!")
-            break
-        print("Too weak. Try again.")
+    pass
 
 
 
 def grade_analyzer(grades):
-    if not grades:
-        return "No Pass"
-    
-    for grade in grades:
-        if grade < 60:
-            return "No Pass"
-    return "Pass"
+    pass
 
 
 def valley_finder(data):
-    res = []
-
-    for i in range(1, len(data) - 1):
-        if data[i] < data[i - 1] and data[i] < data[i + 1]:
-            res.append(data[i])
-    return res
+    pass
 
 
 def email_validator(email_list):
-    res = {"valid_emails": [],
-           "invalid_emails": []
-           }
-    
-    for email in email_list:
-        if "@" in email:
-            name, domain = email.split("@")
-            if "." in domain and len(name) >= 1:
-                res["valid_emails"].append(email)
-        else:
-            res["invalid_emails"].append(email)
-        
-    return res
+    pass
 
 
 def budget_tracker(budget, daily_expenses):
-    
-    # TODO: Implement this function
-    # Simulate day by day, check for exceeding, balanced, or surplus
     pass
