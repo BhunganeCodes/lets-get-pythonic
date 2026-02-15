@@ -10,8 +10,16 @@ def recipe_scaler(ingredients, multiplier):
 
 
 def temperature_converter(celsius_temps):
-    pass
+    if not celsius_temps:
+        return []
 
+    res = []
+
+    for c in celsius_temps:
+        res.append(int(c * 9/5) + 32)
+    
+    return res
+print(temperature_converter([0, 100, -40]))
 
 def password_strength():
     
