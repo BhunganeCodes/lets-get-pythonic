@@ -43,10 +43,7 @@ def merge_sorted_lists(list1, list2):
     if list1 != sorted(list1) or list2 != sorted(list2):
         raise ValueError
     
-    res = []
-    res.extend(list1)
-    res.extend(list2)
-    return sorted(res)
+    return sorted(list1 + list2)
     
 
 def inventory_grouper(products):
